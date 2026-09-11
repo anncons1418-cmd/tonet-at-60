@@ -43,7 +43,7 @@ footer{text-align:center;background:#092117;color:#fff;padding:55px 20px}.footer
 .music-btn{text-decoration:none;display:inline-block}
 
 
-#ytWrap{position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;overflow:hidden}
+
 
 .music-status{margin-top:12px;font-size:12px;opacity:.75;letter-spacing:.08em;text-transform:uppercase}
 .vinyl.playing{animation:spinVinyl 5s linear infinite}

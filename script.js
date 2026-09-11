@@ -11,39 +11,49 @@ function tick(){
   const h=Math.floor(x/3600000); x%=3600000;
   const m=Math.floor(x/60000); x%=60000;
   const s=Math.floor(x/1000);
-  document.getElementById('d').textContent=d;
-  document.getElementById('h').textContent=String(h).padStart(2,'0');
-  document.getElementById('m').textContent=String(m).padStart(2,'0');
-  document.getElementById('s').textContent=String(s).padStart(2,'0');
+  const de=document.getElementById('d'), he=document.getElementById('h'),
+        me=document.getElementById('m'), se=document.getElementById('s');
+  if(de) de.textContent=d;
+  if(he) he.textContent=String(h).padStart(2,'0');
+  if(me) me.textContent=String(m).padStart(2,'0');
+  if(se) se.textContent=String(s).padStart(2,'0');
 }
 tick();
 setInterval(tick,1000);
 
-let playing = false;
-const yt = document.getElementById('ytPlayer');
+const music = document.getElementById('bgMusic');
 const topBtn = document.getElementById('musicBtn');
 const sectionBtn = document.getElementById('musicBtn2');
 const status = document.getElementById('musicStatus');
 const vinyl = document.getElementById('vinyl');
 
-function setLabels(){
+function syncMusicUI(){
+  const playing = music && !music.paused;
   if(topBtn) topBtn.textContent = playing ? '❚❚ Pause music' : '▶ Music';
   if(sectionBtn) sectionBtn.textContent = playing ? '❚❚ Pause music' : '▶ Play music';
   if(status) status.textContent = playing ? 'Music is playing' : 'Music is off';
   if(vinyl) vinyl.classList.toggle('playing', playing);
 }
 
-function toggleMusic(){
-  if(!playing){
-    yt.src='https://www.youtube.com/embed/KQetemT1sWc?autoplay=1&loop=1&playlist=KQetemT1sWc&controls=0&modestbranding=1&playsinline=1';
-    playing=true;
-  }else{
-    yt.src='';
-    playing=false;
+async function toggleMusic(){
+  if(!music) return;
+  try {
+    if(music.paused) {
+      await music.play();
+    } else {
+      music.pause();
+    }
+  } catch(err) {
+    if(status) status.textContent = 'Tap play again to start music';
   }
-  setLabels();
+  syncMusicUI();
 }
 
 if(topBtn) topBtn.addEventListener('click', toggleMusic);
 if(sectionBtn) sectionBtn.addEventListener('click', toggleMusic);
-setLabels();
+if(music){
+  music.addEventListener('play', syncMusicUI);
+  music.addEventListener('pause', syncMusicUI);
+  music.addEventListener('ended', syncMusicUI);
+}
+syncMusicUI();
