@@ -20,11 +20,12 @@
     <a href="#gallery">Photos</a>
     <a href="#rsvp">RSVP</a>
   </nav>
-  <a class="music-btn" href="#music">▶ Music</a>
+  <button id="musicBtn" class="music-btn" type="button">▶ Music</button>
 </header>
 
 
 
+<div id="ytWrap" aria-hidden="true"><iframe id="ytPlayer" title="Background music" allow="autoplay; encrypted-media"></iframe></div>
 <main>
 <section class="hero" id="home">
   <div class="hero-photo">
@@ -112,19 +113,13 @@
 </section>
 
 <section class="section music-section" id="music">
-  <div class="vinyl"><span>60</span></div>
+  <div class="vinyl" id="vinyl"><span>60</span></div>
   <div class="music-copy">
     <p class="eyebrow">A LIFETIME OF GOOD SONGS</p>
     <h2>Beatles at heart.</h2>
-    <p>Press play for a little music while you look through the invitation.</p>
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/KQetemT1sWc?rel=0"
-        title="The Beatles — Here Comes The Sun"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <p>Tap play and keep browsing the invitation while the music plays in the background.</p>
+    <button id="musicBtn2" class="btn gold" type="button">▶ Play music</button>
+    <p id="musicStatus" class="music-status">Music is off</p>
   </div>
 </section>
 
