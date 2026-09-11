@@ -48,3 +48,5 @@ footer{text-align:center;background:#092117;color:#fff;padding:55px 20px}.footer
 .music-status{margin-top:12px;font-size:12px;opacity:.75;letter-spacing:.08em;text-transform:uppercase}
 .vinyl.playing{animation:spinVinyl 5s linear infinite}
 @keyframes spinVinyl{to{transform:rotate(360deg)}}
+
+.rsvp-note{font-size:13px!important;opacity:.75;margin-top:8px}
