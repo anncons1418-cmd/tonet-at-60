@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RSVP — Tonet @ 60</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="rsvp-page">
+  <div class="rsvp-card">
+    <a class="back" href="index.html">← Back to invitation</a>
+    <p class="eyebrow dark">ANTHONY “TONET” @ 60</p>
+    <h1 class="rsvp-title">RSVP</h1>
+    <p>Please respond on or before <b>October 10, 2026.</b></p>
+    <form name="tonet-rsvp" id="rsvpForm">
+      <label>Name<input required name="name" placeholder="Your name"></label>
+      <label>Will you attend?
+        <select required name="attendance">
+          <option value="">Choose one</option>
+          <option>Yes, I’ll be there</option>
+          <option>Sorry, I can’t make it</option>
+        </select>
+      </label>
+      <label>Number of guests<input type="number" name="guests" min="1" max="20" value="1"></label>
+      <label>Message for Tonet<textarea name="message" rows="4" placeholder="Optional birthday message"></textarea></label>
+      <button class="btn gold full" type="submit">Send RSVP ♡</button>
+    </form>
+  </div>
+<script>
+document.getElementById('rsvpForm')?.addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('RSVP form storage is not connected yet. The invitation website is ready for GitHub Pages; connect a Google Form or another form service before sharing the RSVP link.');
+});
+</script>
+</body>
+</html>
