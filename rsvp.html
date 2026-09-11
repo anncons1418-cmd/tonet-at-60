@@ -15,9 +15,7 @@
     <p class="eyebrow dark">ANTHONY “TONET” @ 60</p>
     <h1 class="rsvp-title">RSVP</h1>
     <p>Please respond on or before <b>October 10, 2026.</b></p>
-    <form name="tonet-rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
-      <p class="hidden-field"><label>Don’t fill this out: <input name="bot-field"></label></p>
-      <input type="hidden" name="form-name" value="tonet-rsvp">
+    <form name="tonet-rsvp" id="rsvpForm">
       <label>Name<input required name="name" placeholder="Your name"></label>
       <label>Will you attend?
         <select required name="attendance">
@@ -31,5 +29,11 @@
       <button class="btn gold full" type="submit">Send RSVP ♡</button>
     </form>
   </div>
+<script>
+document.getElementById('rsvpForm')?.addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('RSVP form storage is not connected yet. The invitation website is ready for GitHub Pages; connect a Google Form or another form service before sharing the RSVP link.');
+});
+</script>
 </body>
 </html>

@@ -20,10 +20,10 @@
     <a href="#gallery">Photos</a>
     <a href="#rsvp">RSVP</a>
   </nav>
-  <button id="musicBtn" class="music-btn" type="button">▶ Music</button>
+  <a class="music-btn" href="#music">▶ Music</a>
 </header>
 
-<div id="ytWrap"><iframe id="ytPlayer" title="Background music" allow="autoplay"></iframe></div>
+
 
 <main>
 <section class="hero" id="home">
@@ -44,7 +44,7 @@
   <div class="gold-copy">
     <small>A GOLDEN MILESTONE</small>
     <h2>Six decades. One remarkable story.</h2>
-    <p class="birthday-note">Born October 16 • Celebrating together November 1</p>
+    <p class="birthday-note">His birthday is October 16, and on November 1 we’re gathering the people he loves to celebrate 60 wonderful years.</p>
     <p>Anthony to some. Tonet to family. <span class="mama">“MAMA”</span> to his friends.</p>
   </div>
 </section>
@@ -111,13 +111,20 @@
   </div>
 </section>
 
-<section class="section music-section">
+<section class="section music-section" id="music">
   <div class="vinyl"><span>60</span></div>
   <div class="music-copy">
     <p class="eyebrow">A LIFETIME OF GOOD SONGS</p>
     <h2>Beatles at heart.</h2>
-    <p>A subtle nod to the music he loves, woven throughout the celebration.</p>
-    <button id="musicBtn2" class="btn gold" type="button">▶ Play background music</button>
+    <p>Press play for a little music while you look through the invitation.</p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/KQetemT1sWc?rel=0"
+        title="The Beatles — Here Comes The Sun"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -131,9 +138,8 @@
 </section>
 
 <footer>
-  <p class="script">Cheers to the stories behind us and the memories still ahead. ♡</p>
-  <p class="footer-line">CELEBRATING ANTHONY “TONET” • 60 YEARS</p>
-  <p class="footer-small">Family • Friendship • Laughter • Music • Memories</p>
+  <p class="script">Here’s to the memories we’ve made and the beautiful ones still to come. ♡</p>
+  <p class="footer-small">With love, laughter, good music and the people who matter most.</p>
 </footer>
 </main>
 <script src="script.js"></script>

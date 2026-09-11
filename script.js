@@ -1,4 +1,3 @@
-
 const target = new Date('2026-11-01T17:30:00+08:00').getTime();
 function tick(){
   let x = target - Date.now();
@@ -13,18 +12,3 @@ function tick(){
   document.getElementById('s').textContent=String(s).padStart(2,'0');
 }
 tick(); setInterval(tick,1000);
-
-let playing=false;
-function toggleMusic(){
-  const frame=document.getElementById('ytPlayer');
-  const b1=document.getElementById('musicBtn');
-  const b2=document.getElementById('musicBtn2');
-  if(!playing){
-    frame.src='https://www.youtube.com/embed/KQetemT1sWc?autoplay=1&loop=1&playlist=KQetemT1sWc&controls=0';
-    b1.textContent='❚❚ Music'; b2.textContent='❚❚ Pause background music'; playing=true;
-  }else{
-    frame.src=''; b1.textContent='▶ Music'; b2.textContent='▶ Play background music'; playing=false;
-  }
-}
-document.getElementById('musicBtn').addEventListener('click',toggleMusic);
-document.getElementById('musicBtn2').addEventListener('click',toggleMusic);
